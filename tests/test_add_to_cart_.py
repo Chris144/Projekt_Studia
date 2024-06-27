@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
 from locators.locators import AddToBasketLocators
 from pages.add_to_cart_page import AddToCartPage
 from pages.home_page import HomePage
@@ -37,7 +38,7 @@ class AddToCart(BaseTest):
 
             # Verify if the cart content matches any of the expected values
             assert cart_text in expected_values, f"Unexpected cart value: {cart_text}"
-            print(cart_text)
+
 
             # Explicit wait to check if the empty cart element is present
             empty_cart_text = "Your cart is currently empty."

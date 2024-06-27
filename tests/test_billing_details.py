@@ -38,7 +38,6 @@ class BillingDetails(AddToCart):
         order = self.driver.find_element(*BillingDetailsLocators.ORDER)
         self.assertEqual("Thank you. Your order has been received.", order.text)
 
-
     def test_no_enter_first_name(self):
         """
             TC 002: Test - no first name:
@@ -60,7 +59,6 @@ class BillingDetails(AddToCart):
         self.billing_details.full_page_screenshot()
         lista_errors = self.driver.find_element(*BillingDetailsLocators.LIST_OF_ERRORS)
         self.assertEqual("Billing First name is a required field.", lista_errors.text)
-
 
     def test_no_enter_last_name(self):
         """
@@ -109,7 +107,6 @@ class BillingDetails(AddToCart):
         self.assertEqual("Billing Country is a required field.\nPlease enter an address to continue.",
                          lista_errors.text)
 
-
     def test_no_enter_street_address(self):
         """
             TC 004: Test - no street address
@@ -131,7 +128,6 @@ class BillingDetails(AddToCart):
         self.billing_details.full_page_screenshot()
         lista_errors = self.driver.find_element(*BillingDetailsLocators.LIST_OF_ERRORS)
         self.assertEqual("Billing Street address is a required field.", lista_errors.text)
-
 
     def test_no_enter_postcode(self):
         """
@@ -155,7 +151,6 @@ class BillingDetails(AddToCart):
         lista_errors = self.driver.find_element(*BillingDetailsLocators.LIST_OF_ERRORS)
         self.assertEqual("Please enter a valid postcode / ZIP.", lista_errors.text)
 
-
     def test_no_enter_town_city(self):
         """
             TC 006: Test - no town or city:
@@ -177,7 +172,6 @@ class BillingDetails(AddToCart):
         self.billing_details.full_page_screenshot()
         lista_errors = self.driver.find_element(*BillingDetailsLocators.LIST_OF_ERRORS)
         self.assertEqual("Billing Town / City is a required field.", lista_errors.text)
-
 
     def test_no_enter_phone(self):
         """
@@ -201,7 +195,6 @@ class BillingDetails(AddToCart):
         lista_errors = self.driver.find_element(*BillingDetailsLocators.LIST_OF_ERRORS)
         self.assertEqual("Billing Phone is a required field.", lista_errors.text)
 
-
     def test_no_email_address(self):
         """
             TC 008: Test - no email address:
@@ -223,7 +216,6 @@ class BillingDetails(AddToCart):
         self.billing_details.full_page_screenshot()
         lista_errors = self.driver.find_element(*BillingDetailsLocators.LIST_OF_ERRORS)
         self.assertEqual("Billing Email address is a required field.", lista_errors.text)
-
 
     def test_incorrect_phone_number(self):
         """
@@ -247,7 +239,6 @@ class BillingDetails(AddToCart):
         lista_errors = self.driver.find_element(*BillingDetailsLocators.LIST_OF_ERRORS)
         self.assertEqual("Billing Phone is not a valid phone number.", lista_errors.text)
 
-
     def test_incorrect_email_address(self):
         """
             TC 010: Test - incorrect email address
@@ -269,7 +260,6 @@ class BillingDetails(AddToCart):
         self.billing_details.full_page_screenshot()
         lista_errors = self.driver.find_element(*BillingDetailsLocators.LIST_OF_ERRORS)
         self.assertEqual("Billing Email address is not a valid email address.", lista_errors.text)
-
 
     def tearDown(self):
         self.driver.quit()
