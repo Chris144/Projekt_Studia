@@ -14,7 +14,7 @@ class ReadFile:
 
     @staticmethod
     def get_test_data(index):
-        # This line gets the directory where the current script is located
+        # Gets the directory where the current script is located
         script_dir = os.path.dirname(__file__)
         # This constructs the full path to the Excel
         data_file_path = os.path.join(script_dir, '../test_data/DDT.xlsx')
