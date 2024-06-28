@@ -1,3 +1,5 @@
+import os
+
 import pandas as pd
 
 
@@ -12,9 +14,13 @@ class ReadFile:
 
     @staticmethod
     def get_test_data(index):
-        # Checking if index is less than data and returning the value at the given index
-        data_values = ReadFile.read_file('../test_data/DDT.xlsx')
-        if index <= len(data_values):
+        # This line gets the directory where the current script is located
+        script_dir = os.path.dirname(__file__)
+        # This constructs the full path to the Excel
+        data_file_path = os.path.join(script_dir, '../test_data/DDT.xlsx')
+        # Reads data from the specified Excel file
+        data_values = ReadFile.read_file(data_file_path)
+        if index < len(data_values):
             return data_values[index]
         else:
             return None
