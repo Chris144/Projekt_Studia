@@ -18,7 +18,7 @@ class ReadFile:
         script_dir = os.path.dirname(__file__)
         # This constructs the full path to the Excel
         data_file_path = os.path.join(script_dir, '../test_data/DDT.xlsx')
-        # Reads data from the specified Excel file
+        # Reads data from the Excel file
         data_values = ReadFile.read_file(data_file_path)
         if index < len(data_values):
             return data_values[index]
